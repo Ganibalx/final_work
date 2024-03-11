@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.center{
+    width: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.header-wrapper{
+    background-color: #a6a6d2;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+.footer-wrapper{
+    background-color: #686885;
+}
+.footer{
+    height: 200px;
+    flex-grow: 1;
+}
