@@ -78,15 +78,7 @@ WSGI_APPLICATION = 'recipes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
+DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
             "NAME": os.getenv("MYSQL_DBNAME"),
@@ -138,10 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-if DEBUG:
-    STATICFILES_DIRS = (BASE_DIR / 'static',)
-else:
-    STATIC_ROOT = BASE_DIR / 'static/'
+
+STATIC_ROOT = BASE_DIR / 'static/'
 
 #media
 MEDIA_URL = '/media/'
