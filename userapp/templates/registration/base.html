@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <link rel="stylesheet" href="{% static 'style/login.css' %}">
+</head>
+<body class="body">
+    <main class="main">
+        {% block form %}
+        {% endblock %}
+    </main>
+</body>
+</html>

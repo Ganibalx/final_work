@@ -1,0 +1,15 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+
+{% block form %}
+<h4 class="title">Войдите в аккаунт</h4>
+
+<form method="post" class="form">
+{% csrf_token %}
+
+{{ form.as_div }}
+
+<button type="submit" class="btn">Войти</button>
+</form>
+    <a href="{% url 'registration' %}">Нет акаунта? Зарегистрируйтесь</a>
+{% endblock %}

@@ -3,9 +3,9 @@
     margin: 0;
 }
 .body{
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 .center{
     width: auto;
@@ -19,12 +19,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-grow: 1;
+}
+.main{
+    height: 100vh;
 }
 .footer-wrapper{
     background-color: #686885;
 }
 .footer{
     height: 200px;
-    flex-grow: 1;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card{
+    display:flex;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    flex-direction: row;
+    gap:20px;
+}
+.img_wrapper{
+    width: 200px;
+    height: 200px;
+    background-color: beige;
+    display: flex;
+    align-items: center;
 }

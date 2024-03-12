@@ -1,0 +1,25 @@
+{% extends 'recipesapp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <div style="display: flex; flex-direction: column;gap:30px">
+        <div style="display: flex; gap: 20px">
+        <div style="width: 300px; height: 300px; display: flex; align-items: center; overflow: hidden">
+            <img style="width: 100%" src="{{ object.img.url }}" alt="Изображение">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 5px">
+            {{ object.name }}
+            <p>Автор: {{ object.autor.username }} </p>
+            <a href="{% url 'update' object.id %}">Редактировать</a>
+            <p>Время приготовления: {{ object.time }}</p>
+            <p>Категория: {{ object.category.name }}</p>
+        </div>
+        </div>
+        <div>{{ object.description }}</div>
+        <div>
+            {{ object.cooking_steps }}
+        </div>
+    </div>
+
+
+{% endblock %}

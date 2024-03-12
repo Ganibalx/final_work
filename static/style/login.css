@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    padding: 20px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.form div{
+    display: flex;
+    justify-content: space-between;
+    gap:16px;
+}

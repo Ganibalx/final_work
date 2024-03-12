@@ -1,0 +1,10 @@
+{% extends 'recipesapp/base.html' %}
+{% load static %}
+
+{% block main %}
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_div }}
+    <input type="submit">
+    </form>
+{% endblock %}
