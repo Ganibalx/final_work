@@ -50,8 +50,12 @@ class CreateRecipies(View):
 class CategoryList(ListView):
     model = Recipes
     template_name = 'recipesapp/index.html'
-    extra_context = {'title': 'Рецепты',
-                     'categories': Category.objects.all()}
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная'
+        context['categories'] = Category.objects.all()
+        return context
 
     def get_queryset(self):
         queryset = super(CategoryList, self).get_queryset()

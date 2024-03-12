@@ -10,6 +10,9 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+    def __str__(self):
+        return self.name
+
 
 class Recipes(models.Model):
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)

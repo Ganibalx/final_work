@@ -21,7 +21,7 @@
     align-items: center;
 }
 .main{
-    height: 100vh;
+    min-height: 100vh;
 }
 .footer-wrapper{
     background-color: #686885;
