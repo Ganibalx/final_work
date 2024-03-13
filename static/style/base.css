@@ -48,4 +48,5 @@
     background-color: beige;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }

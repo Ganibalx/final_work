@@ -10,7 +10,9 @@
         <div style="display: flex; flex-direction: column; gap: 5px">
             {{ object.name }}
             <p>Автор: {{ object.autor.username }} </p>
+            {% if user == object.autor %}
             <a href="{% url 'update' object.id %}">Редактировать</a>
+            {% endif %}
             <p>Время приготовления: {{ object.time }}</p>
             <p>Категория: {{ object.category.name }}</p>
         </div>

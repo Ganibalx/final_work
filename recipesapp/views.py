@@ -32,18 +32,24 @@ class Index(TemplateView):
 
 class CreateRecipies(View):
     def get(self, request):
-        return render(self.request, 'recipesapp/addrecipes.html', {'form': RecipesForm()})
+        if request.user.is_authenticated:
+            return render(self.request, 'recipesapp/addrecipes.html', {'form': RecipesForm()})
+        else:
+            return HttpResponseRedirect(reverse('index'))
 
     def post(self, request):
-        form = RecipesForm(request.POST, request.FILES)
-        if form.is_valid():
-            Recipes.objects.create(category=form.cleaned_data['category'],
-                                   name=form.cleaned_data['name'],
-                                   description=form.cleaned_data['description'],
-                                   cooking_steps=form.cleaned_data['cooking_steps'],
-                                   time=form.cleaned_data['time'],
-                                   img=form.cleaned_data['img'],
-                                   autor=request.user)
+        if request.user.is_authenticated:
+            form = RecipesForm(request.POST, request.FILES)
+            if form.is_valid():
+                Recipes.objects.create(category=form.cleaned_data['category'],
+                                       name=form.cleaned_data['name'],
+                                       description=form.cleaned_data['description'],
+                                       cooking_steps=form.cleaned_data['cooking_steps'],
+                                       time=form.cleaned_data['time'],
+                                       img=form.cleaned_data['img'],
+                                       autor=request.user)
+                return HttpResponseRedirect(reverse('index'))
+        else:
             return HttpResponseRedirect(reverse('index'))
 
 

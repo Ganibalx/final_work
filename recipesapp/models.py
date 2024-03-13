@@ -19,7 +19,7 @@ class Recipes(models.Model):
     name = models.CharField(max_length=50, verbose_name='Название рецепта')
     description = models.TextField(verbose_name='Описание')
     cooking_steps = models.TextField(verbose_name='Шаги приготовления')
-    time = models.TimeField(verbose_name='Время приготовления')
+    time = models.CharField(verbose_name='Время приготовления')
     img = models.ImageField(upload_to='recipes', verbose_name='Изображение')
     autor = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор')
 
